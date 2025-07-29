@@ -3,7 +3,7 @@ name: Build Plugin JAR
 on:
   push:
     branches:
-      - main
+      - main  # Change if your branch is named differently
 
 jobs:
   build:
@@ -22,13 +22,8 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Rename JAR to soulbind-smp-{version}.jar
-        run: |
-          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          mv target/*.jar target/soulbind-smp-$VERSION.jar
-
       - name: Upload JAR as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: soulbind-smp
-          path: target/soulbind-smp-*.jar
+          name: plugin-jar
+          path: target/*.jar
