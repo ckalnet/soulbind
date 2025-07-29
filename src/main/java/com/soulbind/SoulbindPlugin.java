@@ -14,7 +14,10 @@ public class SoulbindPlugin extends JavaPlugin {
     
     @Override
     public void onEnable() {
-        saveDefaultConfig();
+        // Create plugin data folder if it doesn't exist
+        if (!getDataFolder().exists()) {
+            getDataFolder().mkdirs();
+        }
         
         // Initialize managers
         soulFragmentManager = new SoulFragmentManager(this);
