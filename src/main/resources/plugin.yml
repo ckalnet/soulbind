@@ -1,0 +1,53 @@
+name: SoulbindSMP
+version: 1.0.0
+main: com.soulbind.SoulbindPlugin
+api-version: 1.21
+author: SoulbindDev
+description: PvP-focused survival plugin with Soul Fragments and cursed gear
+
+commands:
+  bindsoul:
+    description: Convert Soul Fragment items to stat fragments
+    usage: /bindsoul
+    permission: soulbind.bindsoul
+  withdrawsoul:
+    description: Convert stat fragments back to items
+    usage: /withdrawsoul <amount>
+    permission: soulbind.withdrawsoul
+  soulsight:
+    description: Display your fragment count and active buffs
+    usage: /soulsight
+    permission: soulbind.soulsight
+  bloodrage:
+    description: Activate Strength III for 30 seconds (milestone perk)
+    usage: /bloodrage
+    permission: soulbind.bloodrage
+  usemace:
+    description: Use the Cursed Mace ability
+    usage: /usemace
+    permission: soulbind.usemace
+
+permissions:
+  soulbind.*:
+    description: All Soulbind permissions
+    children:
+      soulbind.bindsoul: true
+      soulbind.withdrawsoul: true
+      soulbind.soulsight: true
+      soulbind.bloodrage: true
+      soulbind.usemace: true
+  soulbind.bindsoul:
+    description: Allow converting fragments to stats
+    default: true
+  soulbind.withdrawsoul:
+    description: Allow converting stats to fragments
+    default: true
+  soulbind.soulsight:
+    description: Allow viewing fragment status
+    default: true
+  soulbind.bloodrage:
+    description: Allow using bloodrage ability
+    default: true
+  soulbind.usemace:
+    description: Allow using cursed mace ability
+    default: true

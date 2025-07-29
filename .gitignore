@@ -1,0 +1,35 @@
+# Minecraft plugin typical ignores
+
+# Compiled class files
+*.class
+
+# Maven / Gradle / Build output
+/target/
+/build/
+/out/
+
+# IDE files
+/.idea/
+/*.iml
+*.ipr
+*.iws
+/.vscode/
+/*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Plugin JARs
+*.jar
+
+# Local config
+config.yml
+settings.yml
+
+# Test output
+/test-output/
+/test-results/
